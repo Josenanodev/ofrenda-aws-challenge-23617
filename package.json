@@ -1,0 +1,9 @@
+{
+  "name": "ofrenda-brownsky-jsconf-mx",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node brownsky/server.mjs",
+    "check": "node --check brownsky/dist/app.js"
+  }
+}

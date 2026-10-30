@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#191914">
+  <meta name="description" content="Una ofrenda para Brownsky. Enciende una velita, deja una flor y celebra un amor que siempre encuentra el camino a casa.">
+  <title>Brownsky · Siempre cerquita</title>
+  <link rel="icon" type="image/svg+xml" href="assets/paw.svg">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="altar.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+<symbol id="bandera" viewBox="0 0 100 120">
+        <path fill-rule="evenodd" d="M0 0H100V108L92 120 83 108 75 120 67 108 58 120 50 108 42 120 33 108 25 120 17 108 8 120 0 108Z
+          M12 14a3 3 0 1 0 6 0a3 3 0 1 0-6 0z M29 14a3 3 0 1 0 6 0a3 3 0 1 0-6 0z M47 14a3 3 0 1 0 6 0a3 3 0 1 0-6 0z
+          M65 14a3 3 0 1 0 6 0a3 3 0 1 0-6 0z M82 14a3 3 0 1 0 6 0a3 3 0 1 0-6 0z
+          M42 52a8 8 0 1 0 16 0a8 8 0 1 0-16 0z
+          M61 52a7 7 0 1 0 14 0a7 7 0 1 0-14 0z M25 52a7 7 0 1 0 14 0a7 7 0 1 0-14 0z
+          M52 67.6a7 7 0 1 0 14 0a7 7 0 1 0-14 0z M34 67.6a7 7 0 1 0 14 0a7 7 0 1 0-14 0z
+          M52 36.4a7 7 0 1 0 14 0a7 7 0 1 0-14 0z M34 36.4a7 7 0 1 0 14 0a7 7 0 1 0-14 0z
+          M18 82L25 90 18 98 11 90Z M82 82L89 90 82 98 75 90Z M50 86L54 92 50 98 46 92Z" />
+      </symbol>
+    <symbol id="paw" viewBox="0 0 32 32"><ellipse cx="7" cy="10" rx="3.5" ry="4.5" transform="rotate(-25 7 10)"/><ellipse cx="14" cy="6" rx="3.3" ry="4.5"/><ellipse cx="22" cy="7" rx="3.3" ry="4.5" transform="rotate(15 22 7)"/><ellipse cx="27" cy="14" rx="3.1" ry="4.2" transform="rotate(30 27 14)"/><path d="M7 24c0-4 5-11 9-11s10 8 10 12c0 6-7 2-10 2s-9 3-9-3Z"/></symbol>
+    <symbol id="spark" viewBox="0 0 24 24"><path d="M12 0c1 9 3 11 12 12-9 1-11 3-12 12C11 15 9 13 0 12 9 11 11 9 12 0Z"/></symbol>
+    <symbol id="flower" viewBox="0 0 100 100"><g fill="currentColor"><ellipse cx="50" cy="50" rx="22" ry="45"/><ellipse cx="50" cy="50" rx="22" ry="45" transform="rotate(30 50 50)"/><ellipse cx="50" cy="50" rx="22" ry="45" transform="rotate(60 50 50)"/><ellipse cx="50" cy="50" rx="22" ry="45" transform="rotate(90 50 50)"/><ellipse cx="50" cy="50" rx="22" ry="45" transform="rotate(120 50 50)"/><ellipse cx="50" cy="50" rx="22" ry="45" transform="rotate(150 50 50)"/></g><g fill="none" stroke="#9c3e17" stroke-width="1.2" opacity=".5"><circle cx="50" cy="50" r="30"/><circle cx="50" cy="50" r="23"/><circle cx="50" cy="50" r="16"/><circle cx="50" cy="50" r="9"/><path d="M20 50h60M50 20v60M28 28l44 44M28 72l44-44"/></g><circle cx="50" cy="50" r="5" fill="#a84615"/></symbol>
+    <symbol id="candle" viewBox="0 0 80 120"><ellipse cx="40" cy="111" rx="29" ry="6" fill="#161611" opacity=".5"/><path d="M23 48h34v58q-17 7-34 0Z" fill="#e7d6ad"/><ellipse cx="40" cy="48" rx="17" ry="5" fill="#fff0cd"/><path d="M26 48v19q4 8 7 0V54m19-5v31q-4 5-6-2V57" stroke="#fff0cd" stroke-width="5" fill="none"/><path d="M40 47v-9" stroke="#453b25" stroke-width="2"/><path class="flame" d="M40 9c0 14-12 17-10 27 2 12 20 12 21 0 1-9-9-15-11-27Z" fill="#f6a12c"/><path class="flame" d="M40 25c-1 7-6 9-5 14 1 5 10 5 10 0 0-5-4-7-5-14Z" fill="#fff4b8"/></symbol>
+    <symbol id="bowl" viewBox="0 0 100 100"><ellipse cx="50" cy="80" rx="40" ry="6" fill="#111" opacity=".3"/><path d="M14 48h72L77 76q-27 10-54 0Z" fill="#9c836b"/><ellipse cx="50" cy="48" rx="36" ry="13" fill="#d1c3a2"/><ellipse cx="50" cy="48" rx="29" ry="9" fill="#83b7b6"/><path d="M31 47q9-6 20-3" fill="none" stroke="#dbf6e7" stroke-width="2"/><path d="M28 62q22 9 44 0" fill="none" stroke="#b29a7d" stroke-width="2"/></symbol>
+    <symbol id="bone" viewBox="0 0 100 100"><g transform="rotate(-25 50 50)"><path d="M30 37c-12-17-28 0-15 12-13 13 3 28 15 13h40c12 15 28 0 15-13 13-12-3-29-15-12Z" fill="#e6cfa0"/><path d="M31 47h38" stroke="#f6e5c1" stroke-width="5" stroke-linecap="round"/></g></symbol>
+    <symbol id="ball" viewBox="0 0 100 100"><circle cx="50" cy="55" r="30" fill="#aeaf69"/><path d="M25 39q38-8 42 40M39 27q-8 38 38 43" fill="none" stroke="#e5dfad" stroke-width="3"/><path d="M35 35q10-10 22-4" stroke="#c9cd8c" stroke-width="5" fill="none" stroke-linecap="round"/></symbol>
+  </defs></svg>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="header wrap">
+    <a class="brand" href="#inicio" aria-label="Brownsky, inicio"><svg><use href="#paw"/></svg><span>brownsky<span class="brand-dot">.</span></span></a>
+    <nav aria-label="Navegación principal"><a href="#ofrenda">La ofrenda</a><a href="#recuerdos">Los recuerdos</a></nav>
+    <button class="sound-toggle" id="sound-toggle" aria-pressed="false"><span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="sound-label">Sonido apagado</span></button>
+  </header>
+  <main id="inicio">
+    <section class="altar-section ofrenda-hero wrap" id="ofrenda" aria-labelledby="ofrenda-title">
+      <div class="section-heading"><div class="eyebrow"><span class="little-flower" aria-hidden="true">✺</span> DÍA DE MUERTOS · UN AMOR PARA SIEMPRE</div><h1 id="ofrenda-title">Siempre en casa, <em>Brownsky.</em></h1><p>Una ofrenda para celebrar tu vida y extrañarte bonito.</p></div>
+      <div class="altar">
+        <div class="papel-banner" aria-hidden="true"><svg class="altar-flag"><use href="#bandera"/></svg><svg class="altar-flag"><use href="#bandera"/></svg><svg class="altar-flag"><use href="#bandera"/></svg><svg class="altar-flag"><use href="#bandera"/></svg><svg class="altar-flag"><use href="#bandera"/></svg><svg class="altar-flag"><use href="#bandera"/></svg><svg class="altar-flag"><use href="#bandera"/></svg></div>
+        <div class="challenge-altar">
+<div class="template-altar">
+        <div class="template-dedicatoria" id="dedicatoria">
+          <p class="template-pista">Enciende la vela para leer la dedicatoria.</p>
+          
+          <p class="template-texto-dedicatoria">
+            Para Brownsky, por las huellitas que dejaste en nuestra vida y por un amor que siempre encuentra el camino a casa.
+          </p>
+        </div>
+
+        <div class="template-centro">
+          
+          <img class="template-retrato" src="assets/brownsky.jpg" alt="Brownsky descansando entre los pinos." fetchpriority="high" width="2048" height="1536" />
+          <div class="template-vela" aria-hidden="true">
+            <span class="template-llama"></span>
+            <span class="template-cera"></span>
+          </div>
+        </div>
+
+        <div class="template-nivel template-nivel-1" aria-hidden="true">
+          <span class="template-flor template-flor-a"></span>
+          <span class="template-flor template-flor-b"></span>
+          <span class="template-flor template-flor-c"></span>
+          <span class="template-flor template-flor-d"></span>
+        </div>
+        <div class="template-nivel template-nivel-2" aria-hidden="true">
+          <span class="template-veladora"></span>
+          <span class="template-veladora"></span>
+          <span class="template-veladora"></span>
+          <span class="template-veladora"></span>
+        </div>
+        <div class="template-nivel template-nivel-3" aria-hidden="true">
+          <span class="template-flor template-flor-e"></span>
+          <span class="template-flor template-flor-f"></span>
+          <span class="template-flor template-flor-g"></span>
+          <span class="template-flor template-flor-h"></span>
+        </div>
+      </div>
+
+      <button id="boton-vela" class="template-boton" type="button" aria-pressed="false" aria-controls="dedicatoria">
+        Encender la vela
+      </button>
+      <div class="love-note"><span class="tiny-candle" aria-hidden="true">✦</span><span id="candle-note">Una lucecita para guiarte de vuelta a casa.</span></div>
+        </div>
+        <div class="offerings" aria-label="Detalles de la ofrenda">
+          <button class="offering" data-offering="water" aria-label="Ofrecer agua fresca"><svg><use href="#bowl"/></svg><span>Agüita fresca</span><small>Para tu regreso</small></button>
+          <button class="offering" data-offering="bone" aria-label="Dejar un premio"><svg><use href="#bone"/></svg><span>Un premio</span><small>Con mucho cariño</small></button>
+          <button class="offering main-offering" data-offering="candle" aria-label="Encender otra velita"><span class="candle-glow"></span><svg><use href="#candle"/></svg><span>Una velita</span><small>Para iluminar tu camino</small></button>
+          <button class="offering" data-offering="flower" aria-label="Dejar una flor de cempasúchil"><svg class="offering-flower"><use href="#flower"/></svg><span>Cempasúchil</span><small>Un camino hasta casa</small></button>
+          <button class="offering" data-offering="ball" aria-label="Dejar una pelota"><svg><use href="#ball"/></svg><span>Una pelota</span><small>Por si quieres jugar</small></button>
+        </div>
+        <div class="altar-progress" aria-live="polite" id="altar-status">Cada detalle es una forma de decir: te quiero.</div>
+      </div>
+      <div class="offering-totals"><span><b id="candle-count">0</b> velitas compartidas</span><span class="total-star">✧</span><span><b id="flower-count">0</b> flores con amor</span></div>
+    </section>
+    <section class="memories-section" id="recuerdos"><div class="wrap memories-layout">
+      <div class="memories-copy"><div class="eyebrow">LO QUE EL CORAZÓN NO OLVIDA</div><h2>Te recuerdo.<br>Y sonrío <em>contigo.</em></h2><p>Hay historias que merecen quedarse.<br>Un paseo, una travesura, esa forma tan tuya de mirar.<br>Deja aquí un pedacito de lo que vivieron juntos.</p><button class="button secondary" id="add-memory"><span aria-hidden="true">＋</span> Dejar un recuerdo</button><small class="local-note">Tus recuerdos se guardan en este navegador.</small></div>
+      <div class="memory-board" id="memory-board"><article class="memory-card photo-memory"><img src="assets/brownsky.jpg" alt="Una tarde de Brownsky entre los pinos." loading="lazy" width="2048" height="1536"><div>Donde eres feliz, se queda un poquito de ti. <span>♡</span></div></article><div class="memory-empty" id="memory-empty"><svg><use href="#paw"/></svg><p>La próxima historia<br>la escribes tú.</p></div></div>
+    </div></section>
+    <section class="farewell wrap"><svg class="farewell-flower" aria-hidden="true"><use href="#flower"/></svg><p>Si el amor pudiera hacer un camino,<br><em>ya estarías de vuelta en casa.</em></p><span>POR SIEMPRE, NUESTRO BROWNSKY.</span><button class="text-link" id="send-love">Mandarte un abrazo <span aria-hidden="true">♡</span></button></section>
+  </main>
+  <footer class="footer wrap"><a class="brand" href="#inicio"><svg><use href="#paw"/></svg><span>brownsky<span class="brand-dot">.</span></span></a><p>Hecho de recuerdos, cempasúchil y mucho amor.</p><span>DÍA DE MUERTOS <span class="footer-star">✦</span></span></footer>
+  <div class="toast" id="toast" role="status"></div><div class="particles" id="particles" aria-hidden="true"></div>
+  <dialog id="memory-dialog"><form id="memory-form"><div class="dialog-top"><span class="eyebrow">UN PEDACITO DE TI</span><button type="button" class="close-dialog" id="close-dialog" aria-label="Cerrar">×</button></div><h2>Un recuerdo <em>para siempre.</em></h2><label for="memory-author">Tu nombre</label><input id="memory-author" name="author" maxlength="40" placeholder="¿Quién recuerda a Brownsky?" required autocomplete="given-name"><label for="memory-text">Tu recuerdo</label><textarea id="memory-text" name="memory" maxlength="500" rows="4" placeholder="Me acuerdo de aquella vez que…" required></textarea><div class="form-bottom"><small>Solo se guarda en este navegador.</small><button class="button primary" type="submit">Guardar recuerdo <span>♡</span></button></div></form></dialog>
+</body>
+</html>

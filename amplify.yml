@@ -1,0 +1,10 @@
+version: 1
+frontend:
+  phases:
+    build:
+      commands:
+        - node --check brownsky/dist/app.js
+  artifacts:
+    baseDirectory: brownsky/dist
+    files:
+      - '**/*'

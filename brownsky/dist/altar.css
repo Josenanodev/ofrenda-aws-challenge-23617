@@ -1,0 +1,413 @@
+/* Altar adaptado del proyecto base de Ana Cunha: https://github.com/anacunha/jsconfmx-ofrenda */
+body:not(.encendida) .flame{display:none}
+.challenge-altar .template-vela::before{width:min(360px,70vw);height:min(360px,70vw)}
+.altar-flag{width:58px;height:70px;color:#d98d32;transform-origin:50% 0;animation:mecerse 7s ease-in-out infinite alternate}
+.altar-flag:nth-child(2n){color:#9b80c4;animation-delay:-2s}.altar-flag:nth-child(3n){color:#3d9f91;animation-delay:-4s}.altar-flag:nth-child(4n){color:#c45889;animation-delay:-1s}
+@media(max-width:540px){.altar-flag{width:37px;height:45px}}
+.challenge-altar img.template-retrato{height:188px}
+@media(max-width:540px){.challenge-altar img.template-retrato{height:140px}}
+.challenge-altar {
+  --noche: #1E1033;
+  --noche-clara: #2C1A4A;
+  --cera: #FBEBD3;
+  --cempasuchil: #FF9F1C;
+  --rosa: #E4007C;
+  --turquesa: #1FB5A8;
+  --morado: #7B2FBE;
+  --morado-profundo: #3A1B66;
+
+  --fuente-titulo: "Chango", "Arial Black", sans-serif;
+  --fuente-texto: "Work Sans", system-ui, sans-serif;
+}
+
+
+.challenge-altar {--acento:#b98cff;--fuente-texto:var(--sans);--fuente-titulo:var(--serif);display:flex;flex-direction:column;align-items:center;padding-top:28px}
+/* Altar */
+
+.template-altar {
+  width: min(640px, 100%);
+  margin-top: clamp(1.75rem, 5vw, 2.75rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.template-dedicatoria {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: min(34rem, 100%);
+  min-height: 7.5rem;
+  padding: 1.25rem 1.5rem;
+  border: 2px dashed rgb(251 235 211 / 0.22);
+  border-radius: 14px;
+  transition: border-color 0.8s ease, background-color 0.8s ease, box-shadow 0.8s ease;
+}
+
+.template-dedicatoria > p {
+  grid-area: 1 / 1;
+  margin: 0;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.template-pista {
+  color: rgb(251 235 211 / 0.6);
+  font-style: italic;
+}
+
+.template-texto-dedicatoria {
+  max-width: 34ch;
+  font-size: clamp(1.15rem, 3.2vw, 1.35rem);
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(8px);
+  visibility: hidden;
+}
+
+/* Vela principal */
+
+.template-centro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(0.75rem, 3vw, 1.25rem);
+  margin-top: 4.5rem;
+}
+
+/* Foto opcional junto a la vela */
+.template-retrato {
+  position: relative;
+  z-index: 1;
+  width: clamp(84px, 22vw, 116px);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 5px solid var(--acento);
+  border-radius: 6px;
+  outline: 2px solid rgb(251 235 211 / 0.6);
+  outline-offset: 3px;
+  box-shadow: 0 10px 24px rgb(0 0 0 / 0.45);
+  rotate: -3deg;
+  filter: brightness(0.55) saturate(0.7);
+  transition: filter 1s ease;
+}
+
+.template-vela {
+  position: relative;
+  width: 38px;
+  height: 104px;
+}
+
+.template-vela::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 60px;
+  width: 360px;
+  height: 360px;
+  translate: -50% 50%;
+  background: radial-gradient(circle, rgb(255 190 90 / 0.4), rgb(255 120 30 / 0.12) 40%, transparent 68%);
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+}
+
+.template-cera {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px 8px 3px 3px;
+  background: linear-gradient(90deg, #D9BE95, #FFF6E6 38%, #F1DDBC 62%, #C9AA7E);
+}
+
+/* Mecha */
+.template-cera::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  width: 3px;
+  height: 12px;
+  translate: -50% 0;
+  border-radius: 2px;
+  background: #3B2A22;
+}
+
+/* Gota de cera */
+.template-cera::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 7px;
+  width: 7px;
+  height: 22px;
+  border-radius: 0 0 6px 6px;
+  background: #FFF6E6;
+}
+
+.template-llama {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 2px);
+  width: 24px;
+  height: 46px;
+  translate: -50% 0;
+  border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
+  background: radial-gradient(ellipse 50% 60% at 50% 72%, #FFFFFF 0 18%, #FFE68A 34%, #FFA41F 62%, rgb(255 90 0 / 0) 78%);
+  filter: drop-shadow(0 0 12px rgb(255 170 60 / 0.9));
+  transform: scale(0);
+  transform-origin: 50% 92%;
+  transition: transform 0.6s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+
+/* Niveles del altar */
+
+.template-nivel {
+  position: relative;
+  height: clamp(44px, 9vw, 60px);
+  border-radius: 4px 4px 0 0;
+}
+
+/* Superficie superior de cada nivel */
+.template-nivel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 8px;
+  border-radius: 4px 4px 0 0;
+  background: rgb(255 255 255 / 0.18);
+}
+
+/* Orilla de tela recortada */
+.template-nivel::after {
+  content: "";
+  position: absolute;
+  inset: 100% 0 auto;
+  height: 10px;
+  background: radial-gradient(circle at 50% 0, var(--tela) 0 7px, transparent 7.5px) 0 0 / 16px 10px repeat-x;
+}
+
+.template-nivel-1 {
+  --tela: var(--acento);
+  z-index: 3;
+  width: 48%;
+  background: var(--tela);
+}
+
+.template-nivel-2 {
+  --tela: var(--morado);
+  z-index: 2;
+  width: 72%;
+  background: var(--tela);
+}
+
+.template-nivel-3 {
+  --tela: var(--morado-profundo);
+  z-index: 1;
+  width: 96%;
+  background: var(--tela);
+}
+
+/* Flores de cempasúchil */
+
+.template-flor {
+  position: absolute;
+  bottom: calc(100% - 10px);
+  width: var(--tamano, 40px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #FFD86B 0 16%, transparent 17%),
+    radial-gradient(circle, transparent 0 40%, rgb(150 40 0 / 0.25) 41% 43%, transparent 44%),
+    repeating-conic-gradient(#FF9F1C 0 12deg, #F27410 12deg 24deg);
+  box-shadow: inset 0 -5px 8px rgb(110 25 0 / 0.45);
+}
+
+.template-flor-a { left: -6%; --tamano: 46px; }
+.template-flor-b { left: 9%; --tamano: 34px; }
+.template-flor-c { right: 9%; --tamano: 34px; }
+.template-flor-d { right: -6%; --tamano: 46px; }
+
+.template-flor-e { left: 1%; --tamano: 36px; }
+.template-flor-f { left: 7.5%; --tamano: 28px; }
+.template-flor-g { right: 7.5%; --tamano: 28px; }
+.template-flor-h { right: 1%; --tamano: 36px; }
+
+/* Veladoras */
+
+.template-veladora {
+  position: absolute;
+  bottom: calc(100% - 6px);
+  width: 18px;
+  height: 26px;
+  border-radius: 3px 3px 5px 5px;
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.25), rgb(251 235 211 / 0.85) 30%);
+  box-shadow: inset 0 0 0 2px rgb(255 79 163 / 0.55);
+}
+
+.template-veladora::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 1px);
+  width: 9px;
+  height: 16px;
+  translate: -50% 0;
+  border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
+  background: radial-gradient(ellipse 50% 60% at 50% 72%, #FFFFFF 0 15%, #FFD86B 40%, #FF9F1C 70%, transparent 80%);
+  filter: drop-shadow(0 0 6px rgb(255 170 60 / 0.9));
+  transform: scale(0);
+  transform-origin: 50% 90%;
+  transition: transform 0.4s ease var(--retraso, 0s);
+}
+
+.template-veladora:nth-child(1) { left: 3%; --retraso: 0.35s; }
+.template-veladora:nth-child(2) { left: 10%; --retraso: 0.15s; }
+.template-veladora:nth-child(3) { right: 10%; --retraso: 0.25s; }
+.template-veladora:nth-child(4) { right: 3%; --retraso: 0.45s; }
+
+/* En pantallas pequeñas, menos flores y veladoras para que no se encimen */
+@media (max-width: 480px) {
+  .template-flor-b,
+  .template-flor-c,
+  .template-flor-f,
+  .template-flor-g,
+  .template-veladora:nth-child(2),
+  .template-veladora:nth-child(3) {
+    display: none;
+  }
+
+  .template-flor-a,
+  .template-flor-d { --tamano: 40px; }
+
+  .template-flor-e,
+  .template-flor-h { --tamano: 30px; }
+
+  .template-veladora:nth-child(1) { left: 6%; }
+  .template-veladora:nth-child(4) { right: 6%; }
+}
+
+/* Botón */
+
+.template-boton {
+  margin-top: clamp(2rem, 6vw, 2.75rem);
+  padding: 0.9em 1.9em;
+  border: 2px solid var(--acento);
+  border-radius: 999px;
+  background: var(--acento);
+  color: var(--noche);
+  font: 600 1.125rem/1 var(--fuente-texto);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.15s ease;
+}
+
+.template-boton:hover {
+  transform: translateY(-1px);
+}
+
+.template-boton:active {
+  transform: translateY(1px);
+}
+
+.template-boton:focus-visible {
+  outline: 3px solid var(--cera);
+  outline-offset: 4px;
+}
+
+.template-pie {
+  padding: 1.5rem 1.25rem 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgb(251 235 211 / 0.55);
+}
+
+/* Estado encendido: script.template-js agrega la clase "encendida" a la ofrenda */
+
+.encendida::before,
+.encendida .template-vela::before {
+  opacity: 1;
+}
+
+.encendida .template-llama {
+  transform: scale(1);
+  animation: parpadeo 2.4s ease-in-out 0.6s infinite;
+}
+
+.encendida .template-veladora::before {
+  transform: scale(1);
+}
+
+.encendida .template-retrato {
+  filter: none;
+}
+
+.encendida .template-dedicatoria {
+  border-style: solid;
+  border-color: var(--acento);
+  background-color: rgb(255 255 255 / 0.05);
+  box-shadow: 0 0 40px rgb(255 160 60 / 0.18);
+}
+
+.encendida .template-pista {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.encendida .template-texto-dedicatoria {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  transition-delay: 0.35s;
+}
+
+.encendida .template-boton {
+  background: transparent;
+  color: var(--acento);
+}
+
+@keyframes parpadeo {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.04, 0.96) rotate(-2deg); }
+  50% { transform: scale(0.97, 1.05) rotate(1.5deg); }
+  75% { transform: scale(1.02, 0.98) rotate(-1deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+}
+
+.challenge-altar .template-altar{width:min(680px,100%);margin-top:0}.challenge-altar .template-dedicatoria{min-height:105px;width:min(580px,100%);padding:20px 30px;border-radius:10px}.challenge-altar .template-texto-dedicatoria{font:italic 19px/1.65 var(--serif);max-width:44ch}.challenge-altar .template-pista{font-size:12px}.challenge-altar .template-centro{margin-top:60px}.challenge-altar .template-retrato{width:150px;object-position:36% 50%}.challenge-altar .template-vela{width:44px;height:130px}.challenge-altar .template-boton{font-family:var(--sans);font-size:12px;padding:15px 27px}.challenge-altar .template-nivel{height:48px}.altar .offerings{margin-top:35px;padding-bottom:12px}.altar .papel-banner{gap:20px}.papel-banner span{background:#d77e23;opacity:.9}.papel-banner span:nth-child(2n){background:#9780bf}.papel-banner span:nth-child(3n){background:#418f80}.papel-banner span:nth-child(4n){background:#b54c74}.portrait-candle{visibility:hidden}.encendida .portrait-candle{visibility:visible}.main-offering .candle-glow{opacity:0}.encendida .main-offering .candle-glow{opacity:1}
+@media(max-width:540px){.challenge-altar{padding-top:12px}.challenge-altar .template-dedicatoria{min-height:110px;padding:17px 18px}.challenge-altar .template-texto-dedicatoria{font-size:16px}.challenge-altar .template-retrato{width:112px}.challenge-altar .template-vela{width:33px;height:104px}.challenge-altar .template-centro{margin-top:45px}.challenge-altar .template-nivel{height:35px}.altar .papel-banner{gap:11px}.challenge-altar .template-boton{margin-top:30px}.altar .offerings{margin-top:26px}}
+
+/* La ofrenda es la portada: un solo altar y una sola acción principal. */
+.header{height:88px}
+.ofrenda-hero{position:relative;isolation:isolate;padding-top:30px;padding-bottom:45px}
+.ofrenda-hero::before{content:'';position:absolute;z-index:-1;pointer-events:none;inset:80px -30px 0;background:radial-gradient(ellipse at 50% 40%,#a566351a,transparent 65%);transition:background .8s}
+.ofrenda-hero.encendida::before{background:radial-gradient(ellipse at 50% 40%,#d6943826,transparent 65%)}
+.ofrenda-hero h1{font-size:clamp(36px,4.5vw,60px);line-height:1.16;letter-spacing:-1.8px;margin:12px 0 10px}
+.ofrenda-hero .section-heading>p{font-size:12px}
+.ofrenda-hero .altar{max-width:780px;margin-top:25px;padding-top:53px;background:none}
+.ofrenda-hero .papel-banner{gap:25px}
+.ofrenda-hero .altar-flag{width:43px;height:52px}
+.ofrenda-hero .challenge-altar{padding-top:10px}
+.ofrenda-hero .template-dedicatoria{min-height:66px;padding:12px 26px;width:min(570px,100%);border-color:#b99a7226}
+.ofrenda-hero .template-texto-dedicatoria{font-size:16px;line-height:1.55;max-width:100%}
+.ofrenda-hero .template-pista{font-size:11px}
+.ofrenda-hero .template-centro{margin-top:25px}
+.ofrenda-hero .template-nivel{height:36px}
+.ofrenda-hero .template-boton{margin-top:25px;padding:14px 26px;font-size:12px}
+.ofrenda-hero .love-note{margin-top:12px;justify-content:center;max-width:none;text-align:center;font-size:9px;color:#9b9b85}
+.ofrenda-hero .offerings{border-top:1px solid var(--line);margin-top:35px;padding-top:18px;padding-bottom:8px}
+.ofrenda-hero .offering>svg{height:75px;width:75px}
+.ofrenda-hero .main-offering>svg{height:96px;width:65px}
+.ofrenda-hero .offering .offering-flower{width:58px}
+.ofrenda-hero .altar-progress{padding-top:10px}
+.ofrenda-hero .offering-totals{margin-top:15px}
+@media(max-width:800px){.ofrenda-hero .papel-banner{gap:20px}.ofrenda-hero h1{font-size:44px}.ofrenda-hero .template-dedicatoria{width:min(520px,100%)}}
+@media(max-width:540px){.header{height:77px}.ofrenda-hero{padding-top:25px;padding-bottom:32px}.ofrenda-hero h1{font-size:35px;max-width:330px;margin:15px auto 12px;line-height:1.2;letter-spacing:-1px}.ofrenda-hero .section-heading>p{font-size:10px}.ofrenda-hero .section-heading .eyebrow{font-size:6px;letter-spacing:1.1px}.ofrenda-hero .altar{padding-top:42px;margin-top:22px}.ofrenda-hero .papel-banner{gap:12px}.ofrenda-hero .altar-flag{width:32px;height:39px}.ofrenda-hero .template-dedicatoria{min-height:77px;padding:11px 14px}.ofrenda-hero .template-texto-dedicatoria{font-size:14px}.ofrenda-hero .template-pista{font-size:10px}.ofrenda-hero .template-centro{margin-top:27px}.ofrenda-hero .template-nivel{height:30px}.ofrenda-hero .template-boton{margin-top:24px;min-height:44px}.ofrenda-hero .love-note{font-size:8px;max-width:290px;line-height:1.6}.ofrenda-hero .offerings{margin-top:28px;padding-top:13px}.ofrenda-hero .offering>svg{width:53px;height:65px}.ofrenda-hero .main-offering>svg{width:53px;height:85px}.ofrenda-hero .offering .offering-flower{width:45px}.ofrenda-hero .altar-progress{padding-top:10px}}
+
