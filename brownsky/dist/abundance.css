@@ -1,0 +1,31 @@
+/* Cada pieza descansa sobre el plano superior de un escalón. */
+.ofrenda-hero .template-altar{width:min(760px,100%)}
+.ofrenda-hero .template-centro{z-index:4}
+.ofrenda-hero .template-nivel{overflow:visible}
+.ofrenda-hero .template-nivel-1{width:66%;height:67px;z-index:3}
+.ofrenda-hero .template-nivel-2{width:84%;height:88px;z-index:4}
+.ofrenda-hero .template-nivel-3{width:100%;height:66px;z-index:5}
+.ofrenda-hero .template-nivel::before{height:13px;background:linear-gradient(#f0cfaa35,#e0ad8520 60%,#120c1c30);border-top:1px solid #f0c58e44}
+.altar-plaque{align-items:flex-start;padding-top:18px;letter-spacing:2px;font-size:7px}
+.left-candles{bottom:-7px;left:calc(50% - 190px);z-index:2;filter:drop-shadow(0 5px 2px #25172188)}
+.left-candles svg{filter:none}.left-candles svg+svg{margin-left:-8px}
+.ofrenda-hero .template-vela{margin-bottom:-1px}.ofrenda-hero .template-vela::after{content:'';position:absolute;bottom:-5px;left:-10px;right:-10px;height:8px;border-radius:50%;background:#302133;box-shadow:0 2px 3px #0006;z-index:-1}
+.altar-vase{position:absolute;bottom:-10px;width:83px;height:125px;z-index:2}.vase-left{left:13%}.vase-right{right:13%}
+.altar-aside{bottom:178px}.aside-left{right:calc(50% + 235px)}.aside-right{left:calc(50% + 235px)}
+.template-flor-a,.template-flor-d{--tamano:78px;bottom:calc(100% - 17px)}.template-flor-b,.template-flor-c{--tamano:58px;bottom:calc(100% - 23px)}
+.template-flor-a{left:-6%}.template-flor-d{right:-6%}.template-flor-b{left:6%}.template-flor-c{right:6%}
+.template-veladora{z-index:5;bottom:calc(100% - 12px);width:19px;height:29px;box-shadow:inset 0 0 0 2px #e0bb7277,0 4px 3px #26192988}
+.template-veladora:nth-of-type(1){left:2%}.template-veladora:nth-of-type(2){left:7%}.template-veladora:nth-of-type(3){right:7%}.template-veladora:nth-of-type(4){right:2%}
+.tier-gifts,.lower-gifts{position:absolute;inset:0;pointer-events:none;z-index:4}
+.gift{position:absolute;bottom:calc(100% - 15px);width:87px;height:79px;overflow:visible;filter:drop-shadow(0 3px 2px #281a2a55)}
+.glass-water{left:16%;width:56px;height:80px}.sweet-bread{left:31%;width:91px;height:77px}.rich-fruit{right:29%;width:85px;height:81px}.dinner{right:12%;width:93px;height:75px}
+.tamales{left:18%;width:103px;height:84px}.fresh-water{left:38%;width:89px;height:91px;bottom:calc(100% - 22px)}.dog-bone{right:34%;width:74px;height:72px;bottom:calc(100% - 14px);transform:rotate(-9deg)}.second-bread{right:15%;width:98px;height:82px}
+.template-flor-e,.template-flor-h{--tamano:69px;bottom:calc(100% - 17px);z-index:6}.template-flor-f,.template-flor-g{--tamano:47px;bottom:calc(100% - 21px);z-index:7}
+.petal-trail{position:absolute;inset:12px 15px 0;background-image:radial-gradient(ellipse at 20% 20%,#dc922b 0 3px,transparent 4px),radial-gradient(ellipse at 70% 38%,#ecad46 0 2px,transparent 3px),radial-gradient(ellipse at 48% 70%,#c97d26 0 2px,transparent 3px);background-size:80px 38px,113px 44px,95px 36px;opacity:.45;mask-image:linear-gradient(#000,transparent 85%)}
+.left-candles{bottom:-12px}
+.dog-bone{transform:none}
+.ofrenda-hero .template-nivel-3{background-image:linear-gradient(90deg,#0002,transparent 40%,#fff1 60%,#0002),repeating-linear-gradient(90deg,transparent 0 18px,#d3ac6c10 18px 19px)}
+@media(max-width:800px){.ofrenda-hero .template-nivel-1{width:67%}.altar-vase{width:67px;height:101px}.left-candles{left:calc(50% - 170px)}.gift{width:70px;height:67px}.glass-water{width:46px;height:70px}.sweet-bread{width:76px;height:64px}.rich-fruit{width:69px;height:69px}.dinner{width:78px;height:65px}.tamales{width:83px;height:71px}.fresh-water{width:75px;height:78px}.dog-bone{width:62px;height:61px}.second-bread{width:78px;height:68px}}
+@media(max-width:540px){.ofrenda-hero .template-nivel-1{width:75%;height:49px}.ofrenda-hero .template-nivel-2{width:89%;height:59px}.ofrenda-hero .template-nivel-3{height:46px}.ofrenda-hero .template-nivel::before{height:9px}.altar-plaque{font-size:4px;letter-spacing:.7px;padding-top:14px;gap:5px}.left-candles{left:calc(50% - 114px);bottom:-6px}.left-candles svg{width:34px;height:71px}.left-candles svg+svg{width:27px;height:51px;margin-left:-7px}.altar-vase{width:45px;height:69px;bottom:-2px}.vase-left{left:0}.vase-right{right:0}.template-flor-a,.template-flor-d{--tamano:48px;bottom:calc(100% - 13px)}.template-flor-b,.template-flor-c{display:block;--tamano:31px;bottom:calc(100% - 16px)}.template-flor-b{left:8%}.template-flor-c{right:8%}.template-veladora{width:13px;height:21px;bottom:calc(100% - 9px)}.template-veladora:nth-of-type(1){left:2%}.template-veladora:nth-of-type(4){right:2%}.template-veladora:nth-of-type(2),.template-veladora:nth-of-type(3){display:none}.gift{bottom:calc(100% - 11px)}.glass-water{left:13%;width:29px;height:48px}.sweet-bread{left:28%;width:55px;height:47px}.rich-fruit{right:27%;width:48px;height:47px}.dinner{right:6%;width:58px;height:47px}.tamales{left:13%;width:59px;height:49px}.fresh-water{left:35%;width:53px;height:56px;bottom:calc(100% - 15px)}.dog-bone{right:31%;width:43px;height:43px;bottom:calc(100% - 11px)}.second-bread{right:9%;width:60px;height:50px}.template-flor-e,.template-flor-h{--tamano:44px;bottom:calc(100% - 14px)}.template-flor-f,.template-flor-g{display:block;--tamano:28px;bottom:calc(100% - 18px)}.petal-trail{background-size:48px 26px,70px 30px,63px 24px}}
+@media(max-width:540px){.vase-left{left:9%}.vase-right{right:9%}.altar-vase{bottom:-8px}.left-candles{bottom:-9px}.dog-bone{bottom:calc(100% - 9px)}}
+@media(max-width:540px){.template-veladora:nth-of-type(1),.template-veladora:nth-of-type(4){display:block}}

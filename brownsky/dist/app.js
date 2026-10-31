@@ -170,3 +170,15 @@ document.addEventListener('visibilitychange', () => {
 });
 renderCounts(); renderMemories(); renderCandle();
 if (!storageAvailable) save();
+
+// Lucecitas ambientales: decorativas y sin capturar eventos de interacción.
+const sky = $('.night-sky');
+for (let i = 0; i < 24; i++) {
+  const light = document.createElement('span');
+  light.className = 'firefly';
+  light.style.setProperty('--x', `${(i * 37 + 7) % 100}%`);
+  light.style.setProperty('--y', `${(i * 23 + 12) % 96}%`);
+  light.style.setProperty('--duration', `${5 + i % 7}s`);
+  light.style.setProperty('--delay', `${-(i % 9)}s`);
+  sky.append(light);
+}
