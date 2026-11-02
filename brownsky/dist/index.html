@@ -11,7 +11,10 @@
   <link rel="stylesheet" href="altar.css">
   <link rel="stylesheet" href="night.css">
   <link rel="stylesheet" href="abundance.css">
+  <link rel="stylesheet" href="atmosphere.css">
   <script src="app.js" defer></script>
+  <script src="wind.js" defer></script>
+  <script src="breeze.js" defer></script>
 </head>
 <body>
   <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
@@ -65,16 +68,15 @@
         </div>
 
         <div class="template-centro">
-          <svg class="altar-vase vase-left" aria-hidden="true"><use href="#flower-vase"/></svg><svg class="altar-vase vase-right" aria-hidden="true"><use href="#flower-vase"/></svg>
           <div class="sanctuary" aria-hidden="true"><span class="arch-star">✧</span><span class="arch-label">HASTA VOLVERNOS A ENCONTRAR</span></div>
           <div class="altar-aside aside-left" aria-hidden="true"><span>01 / LA LUZ</span><p>Para que siempre<br>encuentres el camino.</p><i>↘</i></div>
           <div class="altar-aside aside-right" aria-hidden="true"><span>02 / EL AMOR</span><p>Para que sepas<br>que aquí sigues.</p><i>↙</i></div>
-          <div class="left-candles" aria-hidden="true"><svg><use href="#candle"/></svg><svg><use href="#candle"/></svg></div>
+          <div class="left-candles" aria-hidden="true"><div class="altar-side-candle"><span class="template-llama"></span><span class="template-cera"><span class="wax-pool"></span></span></div><div class="altar-side-candle"><span class="template-llama"></span><span class="template-cera"><span class="wax-pool"></span></span></div></div>
           
           <img class="template-retrato" src="assets/brownsky.jpg" alt="Brownsky descansando entre los pinos." fetchpriority="high" width="2048" height="1536" />
           <div class="template-vela" aria-hidden="true">
             <span class="template-llama"></span>
-            <span class="template-cera"></span>
+            <span class="template-cera"><span class="wax-pool"></span></span>
           </div>
         </div>
 
@@ -100,11 +102,13 @@
           <span class="template-flor template-flor-g"></span>
           <span class="template-flor template-flor-h"></span>
         </div>
+        <div class="ground-garden" aria-hidden="true"><svg class="ground-vase vase-left" viewBox="0 0 100 150" aria-hidden="true"><g class="vase-bouquet"><path d="M49 104L24 40m26 62 25-68m-26 68V24" stroke="#65835e" stroke-width="4"/><path d="M47 87q-31-3-27-23 21 3 27 23m6-13q28-2 26-22-22 7-26 22" fill="#6c8c65"/><image href="assets/marigold.svg" x="2" y="12" width="48" height="48"/><image href="assets/marigold.svg" x="48" y="6" width="50" height="50"/><image href="assets/marigold.svg" x="23" y="-1" width="51" height="51"/></g><ellipse cx="50" cy="142" rx="32" ry="7" fill="#352335" opacity=".6"/><path d="M27 92h47l-8 47q-17 9-30 0Z" fill="#aa775f"/><ellipse cx="50" cy="93" rx="24" ry="6" fill="#cc9a78"/><path d="M32 105h37m-35 9h34m-31 13h29" stroke="#e5bb89" stroke-width="3"/><g fill="#e7b87e"><path d="M45 109l6 6-6 6-6-6zm14 0 6 6-6 6-6-6z"/></g></svg><svg class="ground-vase vase-right" viewBox="0 0 100 150" aria-hidden="true"><g class="vase-bouquet"><path d="M49 104L24 40m26 62 25-68m-26 68V24" stroke="#65835e" stroke-width="4"/><path d="M47 87q-31-3-27-23 21 3 27 23m6-13q28-2 26-22-22 7-26 22" fill="#6c8c65"/><image href="assets/marigold.svg" x="2" y="12" width="48" height="48"/><image href="assets/marigold.svg" x="48" y="6" width="50" height="50"/><image href="assets/marigold.svg" x="23" y="-1" width="51" height="51"/></g><ellipse cx="50" cy="142" rx="32" ry="7" fill="#352335" opacity=".6"/><path d="M27 92h47l-8 47q-17 9-30 0Z" fill="#aa775f"/><ellipse cx="50" cy="93" rx="24" ry="6" fill="#cc9a78"/><path d="M32 105h37m-35 9h34m-31 13h29" stroke="#e5bb89" stroke-width="3"/><g fill="#e7b87e"><path d="M45 109l6 6-6 6-6-6zm14 0 6 6-6 6-6-6z"/></g></svg></div>
       </div>
 
       <button id="boton-vela" class="template-boton" type="button" aria-pressed="false" aria-controls="dedicatoria">
         Encender la vela
       </button>
+      <p class="wind-hint">Mueve suavemente el cursor y deja que la brisa lo abrace todo.</p>
       <div class="love-note"><span class="tiny-candle" aria-hidden="true">✦</span><span id="candle-note">Una lucecita para guiarte de vuelta a casa.</span></div>
         </div>
         <div class="ritual-heading"><span>PEQUEÑOS GESTOS, AMOR INFINITO</span><h2>Déjale un poquito <em>de ti.</em></h2><p>Elige un detalle para acompañar su regreso.</p></div>

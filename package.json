@@ -4,6 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "node brownsky/server.mjs",
-    "check": "node --check brownsky/dist/app.js"
+    "check": "node --check brownsky/dist/app.js && node --check brownsky/dist/wind.js && node --check brownsky/dist/breeze.js"
   }
 }

@@ -1,0 +1,54 @@
+/* Cera translúcida, charquito de cera y mecha iluminada. */
+.template-cera{border-radius:45% 45% 12% 12% / 4% 4% 2% 2%;background:linear-gradient(90deg,#93714d 0%,#cfb28a 12%,#f3e2bf 34%,#fff0d2 45%,#e3c89d 72%,#a98459 100%);box-shadow:inset 2px 0 3px #fff4d244,inset -3px 0 8px #64472c44,0 5px 7px #100a1880;transition:filter 1s}
+.template-cera::before{z-index:3;width:2px;height:10px;top:-7px;background:linear-gradient(#322622,#17141b);rotate:7deg}
+.template-cera::after{left:17%;width:14%;height:24%;background:linear-gradient(90deg,#f8e8c9,#ddc49a);box-shadow:9px -5px 0 -1px #ead5af,-4px 12px 0 -2px #f3dfb8}
+.wax-pool{position:absolute;left:3%;right:3%;top:-3px;height:8px;border-radius:50%;background:radial-gradient(ellipse,#9b7854 0 12%,#ddbd83 20%,#f3dfb7 52%,#fff0cf 68%,#b18d60 80%);box-shadow:0 1px 2px #5f402740;z-index:2}
+.encendida .wax-pool{background:radial-gradient(ellipse,#f6b34d 0 9%,#ffe7a1 24%,#fff2cd 53%,#d8b47c 80%);box-shadow:0 -4px 14px #ffcb6c55}
+.encendida .template-cera::before{background:linear-gradient(#ffbc5c,#9a4b20 25%,#29201e 55%)}
+.template-llama{background:radial-gradient(ellipse at 50% 72%,#fffef0 0 13%,#fff1ad 25%,#ffc044 45%,#ef8c2099 62%,transparent 74%);filter:drop-shadow(0 0 5px #ffca6b) drop-shadow(0 0 15px #ff9c2844);rotate:var(--wind-angle,0deg);transition:transform .6s,opacity .6s}
+.template-llama::after{content:'';position:absolute;bottom:8%;left:40%;width:20%;height:19%;border-radius:50%;background:linear-gradient(transparent,#9eb6ec99,#6a8fdb88);filter:blur(.6px)}
+.template-veladora{background:linear-gradient(90deg,#a4845f,#f2dfb8 34%,#fff0d3 48%,#d3b78b 80%,#94734d);border-radius:35% 35% 12% 12% / 8% 8% 4% 4%;border-top:2px solid #f4e6cb}
+.template-veladora::before{rotate:var(--wind-angle,0deg)}
+.ground-garden{position:relative;flex:none;width:calc(100% + 100px);height:60px;max-width:calc(100vw - 48px);z-index:6;background:radial-gradient(ellipse at 50% 0,#07040a50,transparent 65%)}
+.ground-vase{position:absolute;width:110px;height:165px;bottom:0;overflow:visible;filter:drop-shadow(0 7px 5px #09060a88)}
+.ground-vase.vase-left{left:0}.ground-vase.vase-right{right:0}
+.vase-bouquet{transform-origin:50px 96px;rotate:var(--wind-angle,0deg)}
+.ofrenda-hero .altar-flag{transform-origin:50% 0;rotate:var(--wind-angle,0deg)}
+.night-sky .firefly{translate:var(--wind-x,0px) var(--wind-y,0px)}
+.wind-hint{font:italic 13px/1.5 var(--serif);color:#ad967a;margin:14px 0 0;text-align:center}
+@media(max-width:540px){.ground-garden{width:100%;height:100px;max-width:100%}.ground-vase{width:65px;height:98px}.ground-vase.vase-left{left:3%}.ground-vase.vase-right{right:3%}.wind-hint{display:none}.wax-pool{height:6px}}
+@media(prefers-reduced-motion:reduce){.wind-hint{display:none}.vase-bouquet,.template-llama,.template-veladora::before,.ofrenda-hero .altar-flag{rotate:none!important}.night-sky .firefly{translate:none!important}}
+
+/* Tres espacios propios: velas pequeñas, retrato y vela principal. */
+.ofrenda-hero .template-centro{display:grid;grid-template-columns:61px 204px 43px;justify-content:center;align-items:end;column-gap:28px}
+.ofrenda-hero .left-candles{position:relative;left:auto;bottom:0;width:61px;gap:12px}
+.ofrenda-hero .template-centro>.template-vela{transform:none;margin-bottom:0}
+.ofrenda-hero .template-flor-b,.ofrenda-hero .template-flor-c{--tamano:34px;bottom:8px}
+.ofrenda-hero .template-flor-b{left:8%}.ofrenda-hero .template-flor-c{right:8%}
+.ofrenda-hero .altar-flag{animation:none;transform:none}
+.ground-garden{width:calc(100% + 180px)}
+@media(max-width:800px) and (min-width:541px){
+  .ofrenda-hero .template-nivel-1{width:75%}
+  .ofrenda-hero .template-flor-a,.ofrenda-hero .template-flor-d{--tamano:54px;bottom:5px}
+  .ground-garden{height:105px}.ground-vase{width:70px;height:105px}
+}
+@media(max-width:540px){
+  .ofrenda-hero .template-centro{grid-template-columns:42px 143px 28px;column-gap:17px}
+  .ofrenda-hero .left-candles{width:42px;gap:8px}
+  .ofrenda-hero .template-nivel-1{width:84%}
+  .ofrenda-hero .template-flor-a,.ofrenda-hero .template-flor-d{--tamano:35px;bottom:4px}
+  .ofrenda-hero .template-flor-a{left:-3%}.ofrenda-hero .template-flor-d{right:-3%}
+  .ofrenda-hero .template-flor-b,.ofrenda-hero .template-flor-c{--tamano:22px;bottom:4px}
+  .ground-garden{width:100%}
+}
+
+/* Evita flores ocultas detrás de la comida y deja aire en pantallas pequeñas. */
+.ofrenda-hero .template-flor-b,.ofrenda-hero .template-flor-c{display:none}
+.night-sky{contain:paint}
+@media(max-width:540px){.ofrenda-hero .template-flor-a,.ofrenda-hero .template-flor-d{display:none}}
+
+/* Partículas libres: la corriente las transporta sin devolverlas al origen. */
+.night-sky{background-image:none;height:1600px}
+.night-sky .firefly{display:none}
+.breeze-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.breeze-canvas{display:none}}

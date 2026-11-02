@@ -29,3 +29,18 @@
 @media(max-width:540px){.ofrenda-hero .template-nivel-1{width:75%;height:49px}.ofrenda-hero .template-nivel-2{width:89%;height:59px}.ofrenda-hero .template-nivel-3{height:46px}.ofrenda-hero .template-nivel::before{height:9px}.altar-plaque{font-size:4px;letter-spacing:.7px;padding-top:14px;gap:5px}.left-candles{left:calc(50% - 114px);bottom:-6px}.left-candles svg{width:34px;height:71px}.left-candles svg+svg{width:27px;height:51px;margin-left:-7px}.altar-vase{width:45px;height:69px;bottom:-2px}.vase-left{left:0}.vase-right{right:0}.template-flor-a,.template-flor-d{--tamano:48px;bottom:calc(100% - 13px)}.template-flor-b,.template-flor-c{display:block;--tamano:31px;bottom:calc(100% - 16px)}.template-flor-b{left:8%}.template-flor-c{right:8%}.template-veladora{width:13px;height:21px;bottom:calc(100% - 9px)}.template-veladora:nth-of-type(1){left:2%}.template-veladora:nth-of-type(4){right:2%}.template-veladora:nth-of-type(2),.template-veladora:nth-of-type(3){display:none}.gift{bottom:calc(100% - 11px)}.glass-water{left:13%;width:29px;height:48px}.sweet-bread{left:28%;width:55px;height:47px}.rich-fruit{right:27%;width:48px;height:47px}.dinner{right:6%;width:58px;height:47px}.tamales{left:13%;width:59px;height:49px}.fresh-water{left:35%;width:53px;height:56px;bottom:calc(100% - 15px)}.dog-bone{right:31%;width:43px;height:43px;bottom:calc(100% - 11px)}.second-bread{right:9%;width:60px;height:50px}.template-flor-e,.template-flor-h{--tamano:44px;bottom:calc(100% - 14px)}.template-flor-f,.template-flor-g{display:block;--tamano:28px;bottom:calc(100% - 18px)}.petal-trail{background-size:48px 26px,70px 30px,63px 24px}}
 @media(max-width:540px){.vase-left{left:9%}.vase-right{right:9%}.altar-vase{bottom:-8px}.left-candles{bottom:-9px}.dog-bone{bottom:calc(100% - 9px)}}
 @media(max-width:540px){.template-veladora:nth-of-type(1),.template-veladora:nth-of-type(4){display:block}}
+
+/* Las velas laterales comparten la cera, llama y estado de la vela principal. */
+.left-candles{bottom:-1px;gap:12px}
+.altar-side-candle{position:relative;width:28px;height:58px;flex:none}
+.altar-side-candle+.altar-side-candle{width:21px;height:40px}
+.ofrenda-hero .altar-side-candle .template-llama{width:22px;height:38px}
+.ofrenda-hero .altar-side-candle+.altar-side-candle .template-llama{width:17px;height:29px}
+@media(max-width:540px){
+  .left-candles{bottom:-1px;gap:8px}
+  .altar-side-candle{width:19px;height:40px}
+  .altar-side-candle+.altar-side-candle{width:15px;height:28px}
+  .ofrenda-hero .altar-side-candle .template-llama{width:17px;height:29px}
+  .ofrenda-hero .altar-side-candle+.altar-side-candle .template-llama{width:14px;height:23px}
+  .altar-side-candle .template-cera::after{left:4px;width:5px;height:14px}
+}
